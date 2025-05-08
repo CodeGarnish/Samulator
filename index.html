@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<H1>
+    Welcome to the samulator
+</H1>
+
+
+<p1>
+    This is salmon, or sammy for short. <br>
+    She responds to her name, allegedly..<br>
+    She will meow untill you give<br>
+    her what she wants.<br>
+    Figure it out. <br>
+</p1>
+
+<div class="rightText">
+<h2>Sammy's Command:</h2>
+<p2 id="salmonCommand">
+    Meow
+</p2>
+</div>
+
+<img src="salmon.jpg" class="pageImage" id="imgOne">
+
+
+<div class="sidebar">
+<button onclick="giveMouse()" class = "toyButton"><img src="salmontoy.jpg" class="salmonToy" id="toySalmon"></button>
+<button onclick="givePat()" class = "patButton"><img src="blackguyhand.jpg" class="salmonPat" id="patSalmon"></button>
+<button onclick="giveFood()" class = "feedButton"><img src="salmonsfood.webp" class="salmonFood" id="feedSalmon"></button>
+</div>
+<style>
+    h1 {
+        text-align: center;
+    }
+    
+    button{
+        display: flexbox;
+    }
+
+    .pageImage{
+        width: 40%;
+        height: auto;
+        display: block;
+        margin: 0 30%;
+    }
+
+
+    .toyButton{
+        border: none;
+            background: none;
+            padding: 0;
+            width: 100%;
+            height: auto;
+    }
+    .salmonToy {
+        margin: 0 45%;
+        width: 8%;
+        height: auto;
+    }
+
+    .patButton{
+        border: none;
+            background: none;
+            width: 100%;
+            height: auto;
+    }
+    .salmonPat {
+        width: 8%;
+        height: auto;
+    }
+
+    .feedButton{
+        border: none;
+            background: none;
+            width: 100%;
+            height: auto;
+    }
+    .salmonFood {
+        width: 8%;
+        height: auto;
+    }
+    .sidebar {
+  display: flex;
+  justify-content: center;
+  gap: 0;                /* ← no space between images */
+}
+
+.sidebar img {
+  width: 150px;
+  height: auto;
+  margin: 0;             /* ← remove any image margin */
+  padding: 0;            /* ← remove padding if any */
+  display: block;        /* ← avoid default inline spacing */
+}
+
+.sidebar button {
+  width: 150px;
+  height: auto;
+  margin: 0;             /* ← remove any image margin */
+  padding: 0;            /* ← remove padding if any */
+  display: block;        /* ← avoid default inline spacing */
+}
+    img.salmonToy:hover {
+        background-color: black;
+        color: rgb(228, 209, 255);
+    } 
+
+</style>
+
+
+
+<style>
+    p1{
+        float: left;
+        display: flexbox;
+        justify-content: left;
+        margin-top: 0px;
+    }
+
+    .rightText{
+        
+        float: right;
+        display: flexbox;
+        justify-content: right;
+        margin-top: 0px;
+    }
+</style>
+
+<script>
+    const sceneOpen = Math.floor(Math.random() * 3) + 1
+    if (sceneOpen === 1) {
+        document.getElementById("salmonCommand").innerText = "meow meow"
+        }
+    if (sceneOpen === 2) {
+    document.getElementById("salmonCommand").innerText = "mrrrow"
+    }
+    if (sceneOpen === 3) {
+        document.getElementById("salmonCommand").innerText = "MEOOOWWWWW"
+        }
+
+    function giveMouse() {
+
+    if (sceneOpen === 3) {
+    document.getElementById("toySalmon").style.transform = "translateY(-200%)";
+        document.getElementById("salmonCommand").innerText = "Salmon is delighted! Please see Jojo about adopting her"
+}
+    else {
+        document.getElementById("salmonCommand").innerText = "Salmon is displeased"
+        document.getElementById("imgOne").src = "evilsalmon.jpg"
+    }
+
+    }
+    function giveFood() {
+    if (sceneOpen === 2) {
+        document.getElementById("imgOne").src = "samEat.jpeg"
+        document.getElementById("salmonCommand").innerText = "Salmon is delighted! Please see Jojo about adopting her"
+} 
+    else {
+        document.getElementById("salmonCommand").innerText = "Salmon is displeased"
+        document.getElementById("imgOne").src = "evilsalmon.jpg"
+    }
+
+}
+
+    function givePat() {
+    if (sceneOpen === 1) {
+           document.getElementById("imgOne").src = "petSam.jpeg"
+        document.getElementById("salmonCommand").innerText = "Salmon is delighted! Please see Jojo about adopting her"
+}
+    else {
+        document.getElementById("salmonCommand").innerText = "Salmon is displeased"
+        document.getElementById("imgOne").src = "evilsalmon.jpg"
+    }
+}
+
+</script>
+
+<!--
+
+key: big meow is playtime, mrrow is she wants pats, the other one is the other one.
+alright new task: make it so that each button, when done right,
+will get rid of the little image, and replace the main image
+with an image of sammy using the item.
+
+also make an angry sammy
+
+and stylize 
+
+you need 4 images of sammy: angry, playing, eating, getting pet.
+
+2 images, a hand, and a cat food
+
+to make sceneOpen random:
+
+Math.floor(Math.random() * 3) + 1
+
+Alright new idea:
+use javascript to have a function that runs automatically, giving a random
+number from one to three. that number will result in the execution
+of a code sending out a type of meow text on the right titled "sammy's wishes"
+each one of the three will translate to either pats, toy, or food.
+
+make it so that the pet function displays an image of her gettting pet. same for the
+food,
+
+if they click the wrong one. it will say sammy is mad
+
+
+alright we need to import several images of sammy
+
+nessecary components
+background image
+side instructions
+pet hover
+
+feed button (plus pre fed noise and post fed image)
+give seat button (plus pre seat noise and post seat image)
+toy button (plus toy noise and post toy image)
+
+reset function (maybe on timer)
+win function 
+
+
+-->
